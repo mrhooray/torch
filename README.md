@@ -11,6 +11,8 @@ Linux 3.7 and above
 
 ##Usage
 ```
+#./torch.sh -p <pid> -d 10 -o flamegraph.svg
+...
 #./torch.sh -h
 Usage: torch [<OPTIONS>]
 
