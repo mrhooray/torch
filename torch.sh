@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 USAGE="Usage: torch [<OPTIONS>]
 
 Options:
