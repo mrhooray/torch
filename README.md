@@ -23,8 +23,8 @@ Options:
 
 ##Examples
 ###Click graph to zoom
-Simple Program ([source](https://github.com/mrhooray/torch/blob/master/examples/simple-program.rs))
-[![simple-program](https://cdn.rawgit.com/mrhooray/torch/master/examples/simple-program.svg)](https://cdn.rawgit.com/mrhooray/torch/master/examples/simple-program.svg)
+A loop printing stuff ([source](https://github.com/mrhooray/torch/blob/master/examples/loop.rs))
+[![loop](https://cdn.rawgit.com/mrhooray/torch/master/examples/loop.svg)](https://cdn.rawgit.com/mrhooray/torch/master/examples/loop.svg)
 Tcp Echo Server ([source](https://github.com/mrhooray/torch/blob/master/examples/tcp-echo-server.rs)) with [coio-rs](https://github.com/zonyitoo/coio-rs)
 [![tcp-echo-server](https://cdn.rawgit.com/mrhooray/torch/master/examples/tcp-echo-server.svg)](https://cdn.rawgit.com/mrhooray/torch/master/examples/tcp-echo-server.svg)
 HTTP Hello World ([source](https://github.com/mrhooray/torch/blob/master/examples/http-hello-world.rs)) with [hyper](https://github.com/hyperium/hyper)
