@@ -32,3 +32,4 @@ HTTP Hello World ([source](https://github.com/mrhooray/torch/blob/master/example
 
 ##License
 MIT
+CDDL
