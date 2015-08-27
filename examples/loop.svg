@@ -1769,8 +1769,8 @@
 <text text-anchor="" x="13.00" y="587.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >[unknown]</text>
 </g>
 <g class="func_g" onmouseover="s(this)" onmouseout="c()" onclick="zoom(this)">
-<title>simple-program (433 samples, 100.00%)</title><rect x="10.0" y="593" width="1180.0" height="15.0" fill="rgb(223,151,11)" rx="2" ry="2" />
-<text text-anchor="" x="13.00" y="603.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >simple-program</text>
+<title>loop (433 samples, 100.00%)</title><rect x="10.0" y="593" width="1180.0" height="15.0" fill="rgb(223,151,11)" rx="2" ry="2" />
+<text text-anchor="" x="13.00" y="603.5" font-size="12" font-family="Verdana" fill="rgb(0,0,0)"  >loop</text>
 </g>
 <g class="func_g" onmouseover="s(this)" onmouseout="c()" onclick="zoom(this)">
 <title>pty_write (2 samples, 0.46%)</title><rect x="1004.7" y="433" width="5.4" height="15.0" fill="rgb(206,190,51)" rx="2" ry="2" />
