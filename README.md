@@ -1,26 +1,23 @@
 # torch
 > A script that glues perf CPU sampling and [Brendan Gregg's visualizer](https://github.com/brendangregg/FlameGraph) to generate FlameGraphs.
 
-* [Dependency](#dependency)
+* [Requirements](#requirements)
 * [Usage](#usage)
 * [Examples](#examples)
 * [License](#license)
 
-##Dependency
+##Requirements
 Linux 3.7 and above
 
 ##Usage
 ```
-#./torch.sh -p <pid> -d 10 -o flamegraph.svg
-...
 #./torch.sh -h
-Usage: torch [<OPTIONS>]
+Usage: ./torch.sh [options] pid
 
 Options:
--h, --help            show this screen
--p, --pid <pid>       process id of the program
--d, --duration <num>  duration of sampling in seconds
--o, --output <file>   file to save flamegraph to
+-d, --duration <num>  duration of sampling in seconds [default: 10]
+-o, --output <file>   file to save flamegraph to [default: ./flamegraph.svg]
+-h, --help            this message
 ```
 
 ##Examples

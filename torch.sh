@@ -1,52 +1,54 @@
 #!/usr/bin/env bash
-USAGE="Usage: torch [<OPTIONS>]
+USAGE="Usage: ./torch.sh [options] pid
 
 Options:
--h, --help            show this screen
--p, --pid <pid>       process id of the program
--d, --duration <num>  duration of sampling in seconds
--o, --output <file>   file to save flamegraph to"
+-d, --duration <num>  duration of sampling in seconds [default: 10]
+-o, --output <file>   file to save flamegraph to [default: ./flamegraph.svg]
+-h, --help            this message"
 
 while [[ $# > 0 ]]
 do
-    key="$1"
-
-    case $key in
-        -p|--pid)
-            PID="$2"
-            shift
-            ;;
+    case "$1" in
         -d|--duration)
             DURATION="$2"
-            shift
+            shift 2
             ;;
         -o|--output)
             OUTPUT="$2"
-            shift
+            shift 2
             ;;
         -h|--help)
-            HELP=true
-            ;;
-        *)
-            echo "Error: Invalid Option $1"
             echo "$USAGE"
+            exit 0
+            ;;
+        -*)
+            echo "Error: Unkown Option $1" >&2
+            echo "$USAGE" >&2
             exit 1
             ;;
+        *)
+            break
+            ;;
     esac
-    shift
 done
 
-if [ "$HELP" = true ]
+PID=$1
+
+if [[ -z "$PID" ]]
 then
-    echo "$USAGE"
-    exit 0
+    echo "Error: pid is missing" >&2
+    echo "$USAGE" >&2
+    exit 1
 fi
 
-if [[ -z "$PID" ]] || [[ -z "$DURATION" ]] || [[ -z "$OUTPUT" ]]
+if [[ -z "$DURATION" ]]
 then
-    echo "Error: Missing Options"
-    echo "$USAGE"
-    exit 1
+    DURATION=10
+fi
+
+if [[ -z "$OUTPUT" ]]
+then
+    OUTPUT=./flamegraph.svg
 fi
 
 function get_temp_file() {
