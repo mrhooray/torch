@@ -51,6 +51,11 @@ then
     OUTPUT=./flamegraph.svg
 fi
 
+if [[ "$OUTPUT" != /* ]]
+then
+	OUTPUT="$(pwd)"/"${OUTPUT#./}"
+fi
+
 function get_temp_file() {
     local tmppath=${1:-/tmp}
     local tmpfile=$2${2:+-}
@@ -66,6 +71,7 @@ TEMP_FILE=$(get_temp_file /tmp torch)
 echo "sampling pid $PID for $DURATION seconds" && \
 perf record -o $TEMP_FILE -F 199 -p $PID -a --call-graph dwarf -- sleep $DURATION > /dev/null && \
 echo "saving flame graph to $OUTPUT" && \
+cd "$(dirname "${BASH_SOURCE[0]}")"
 perf script -i $TEMP_FILE | ./stackcollapse-perf.pl | ./flamegraph.pl > $OUTPUT && \
 echo "done."
 rm -rf $TEMP_FILE
